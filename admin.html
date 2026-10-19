@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ADMIN LINA HOUSE</title>
+<style>
+body{font-family:Arial;padding:20px;background:#f5f5f5;}
+.box{max-width:420px;margin:auto;background:#fff;padding:20px;border:1px solid #000;}
+input,select{width:100%;padding:12px;margin:8px 0;border:1px solid #000;box-sizing:border-box;}
+button{width:100%;padding:14px;background:#000;color:#fff;border:none;font-weight:900;margin-top:10px;cursor:pointer;}
+.login{max-width:320px;margin:100px auto;background:#fff;padding:30px;border:2px solid #000;text-align:center;}
+.prod{border:1px solid #eee;padding:10px;margin:10px 0;display:flex;justify-content:space-between;align-items:center;font-size:12px;}
+</style>
+</head>
+<body>
+
+<div id="loginBox" class="login">
+<h3>🔐 ADMIN LINA HOUSE</h3>
+<p style="font-size:12px;color:#888;margin:10px 0;">Mot de passe: lina2024</p>
+<input type="password" id="pwd" placeholder="Mot de passe">
+<button onclick="checkPwd()">ENTRER</button>
+</div>
+
+<div id="adminBox" style="display:none;">
+<div class="box">
+<h3 style="text-align:center;letter-spacing:2px;">AJOUTER PRODUIT</h3>
+<input type="text" id="pName" placeholder="Nom ex: MONTRE LUXE FEMME">
+<input type="number" id="pPrice" placeholder="Prix ex: 15000">
+<input type="text" id="pCat" placeholder="Catégorie ex: ACCESSOIRE LUXE">
+<input type="text" id="pImg" placeholder="Nom image ex: montre.jpg OU lien https">
+<select id="pBadge">
+<option>BEST SELLER</option>
+<option>STOCK LIMITÉ 🔥</option>
+<option>NOUVEAU</option>
+<option>PROMO -20%</option>
+</select>
+<button onclick="addProd()">+ AJOUTER SUR LE SITE</button>
+<button onclick="location.href='index.html'" style="background:#fff;color:#000;border:1px solid #000;">VOIR LE SITE →</button>
+<div id="list"></div>
+<button onclick="clearAll()" style="background:#e00;margin-top:20px;">❌ TOUT SUPPRIMER PRODUITS AJOUTÉS</button>
+</div>
+</div>
+
+<script>
+function checkPwd(){
+if(document.getElementById('pwd').value==='lina2024'){
+document.getElementById('loginBox').style.display='none';
+document.getElementById('adminBox').style.display='block';
+renderList();
+}else alert('Mot de passe incorrect');
+}
+function addProd(){
+let name=document.getElementById('pName').value;
+let price=parseInt(document.getElementById('pPrice').value);
+let cat=document.getElementById('pCat').value;
+let img=document.getElementById('pImg').value;
+let badge=document.getElementById('pBadge').value;
+if(!name||!price){alert('Nom et prix obligatoires');return;}
+let arr=JSON.parse(localStorage.getItem('lina_products')||'[]');
+arr.push({name,price,cat,badge,img,badgeClass:badge.includes('BEST')?'red':''});
+localStorage.setItem('lina_products',JSON.stringify(arr));
+alert('Produit ajouté ! Va voir index.html');
+document.getElementById('pName').value='';
+document.getElementById('pPrice').value='';
+renderList();
+}
+function renderList(){
+let arr=JSON.parse(localStorage.getItem('lina_products')||'[]');
+let html='<h4 style="margin-top:20px;font-size:12px;">PRODUITS AJOUTÉS ('+arr.length+')</h4>';
+arr.forEach((p,i)=>{
+html+=`<div class="prod"><span>${p.name} - ${p.price}F</span><button onclick="delProd(${i})" style="width:auto;padding:5px 8px;background:#fff;color:#000;border:1px solid #000;">❌</button></div>`;
+});
+document.getElementById('list').innerHTML=html;
+}
+function delProd(i){
+let arr=JSON.parse(localStorage.getItem('lina_products')||'[]');
+arr.splice(i,1);
+localStorage.setItem('lina_products',JSON.stringify(arr));
+renderList();
+}
+function clearAll(){
+if(confirm('Supprimer tous les produits ajoutés ?')){
+localStorage.removeItem('lina_products');
+renderList();
+}
+}
+</script>
+</body>
+</html>
