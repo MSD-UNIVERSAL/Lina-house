@@ -7,100 +7,64 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:#080808;color:#fff;font-family:Arial,sans-serif;padding-bottom:90px;max-width:420px;margin:0 auto}
-.banner{width:100%;height:155px;position:relative;overflow:hidden;background:#000;border-bottom:2px solid #c9a84c}
-.banner img{width:100%;height:100%;object-fit:cover;display:block}
-.banner::after{content:"LINA'S HOUSE";position:absolute;top:12px;left:12px;color:#e8c86a;font-weight:900;font-size:18px;border:1px solid #c9a84c;padding:6px 10px;background:rgba(0,0,0,0.6);font-family:serif;letter-spacing:1px}
-.sec{padding:12px;background:#080808}
-.t{color:#e8c86a;font-weight:800;font-size:13px;margin:14px 0 10px;letter-spacing:0.5px}
-.cgrid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
-.cat{background:linear-gradient(180deg,#151515,#0a0a0a);border:1.5px solid #c9a84c;border-radius:10px;padding:14px 4px 10px;text-align:center;cursor:pointer}
-.cat .ic{font-size:28px;color:#e8c86a;margin-bottom:6px;display:block}
-.cat p{color:#e8c86a;font-size:8.5px;font-weight:700;line-height:1.15}
+.banner{width:100%;background:#000;border-bottom:2px solid #c9a84c}
+.banner img{width:100%;height:auto;display:block;min-height:220px;object-fit:cover;object-position:top center}
+.sec{padding:12px}
+.t{color:#e8c86a;font-weight:800;font-size:14px;margin:16px 0 12px}
+.cgrid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+.cat{background:linear-gradient(180deg,#181818,#0a0a0a);border:2px solid #c9a84c;border-radius:14px;padding:20px 6px 14px;text-align:center;min-height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.cat .ico{font-size:42px;color:#c9a84c;line-height:1;margin-bottom:10px;filter:drop-shadow(0 0 2px #c9a84c)}
+.cat p{color:#c9a84c;font-size:10.5px;font-weight:800;line-height:1.2}
 .prod-row{display:flex;gap:10px;overflow-x:auto;padding-bottom:6px}
 .prod-row::-webkit-scrollbar{display:none}
-.prod{min-width:110px;max-width:110px;background:#fff;border-radius:10px;overflow:hidden;flex-shrink:0;cursor:pointer;text-align:center}
-.prod img{width:100%;height:108px;object-fit:cover;display:block;background:#fff}
-.prod h4{color:#222;font-size:9px;font-weight:700;margin:6px 4px 2px;min-height:28px;line-height:1.2}
-.prod .pr{color:#b8963a;font-weight:900;font-size:11px;padding-bottom:7px}
-.contact{text-align:center;padding:16px 10px 12px;background:#0c0c0c;margin-top:8px;border-top:1px solid #1a1a1a;border:1.5px solid #c9a84c;border-radius:10px;margin:12px}
-.contact h3{color:#c9a84c;font-size:13px;letter-spacing:1px;font-weight:800;margin-bottom:10px}
+.prod{min-width:120px;max-width:120px;background:#fff;border-radius:12px;overflow:hidden;flex-shrink:0;text-align:center}
+.prod img{width:100%;height:120px;object-fit:cover}
+.prod h4{color:#222;font-size:10px;font-weight:700;margin:6px 4px;min-height:30px}
+.prod .pr{color:#b8963a;font-weight:900;font-size:12px;padding-bottom:8px}
+.contact{text-align:center;padding:18px 10px;background:#0c0c0c;border:2px solid #c9a84c;border-radius:12px;margin:14px 12px}
+.contact h3{color:#c9a84c;font-size:14px;font-weight:900;margin-bottom:8px}
 .contact .infos{color:#ddd;font-size:11px}
-.socials{display:flex;gap:14px;justify-content:center;margin-top:10px}
-.socials div{width:24px;height:24px;background:#222;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;color:#c9a84c;border:0.5px solid #444;cursor:pointer}
-.btns{display:flex;gap:8px;justify-content:center;margin-top:12px}
-.btn{padding:10px 16px;border:none;border-radius:8px;font-weight:800;font-size:12px;text-decoration:none;display:inline-block;cursor:pointer}
+.btns{display:flex;gap:12px;justify-content:center;margin-top:12px}
+.btn{padding:11px 22px;border-radius:22px;font-weight:800;font-size:12px;text-decoration:none}
 .bw{background:#25D366;color:#fff}
 .bf{background:#1877F2;color:#fff}
-.nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:420px;background:#0e0e0e;border-top:1.5px solid #c9a84c;display:flex;justify-content:space-around;padding:6px 0 10px;border-radius:16px 16px 0 0;z-index:99}
-.nav div{color:#777;font-size:9px;text-align:center;flex:1;cursor:pointer}
+.nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:420px;background:#111;border-top:2px solid #c9a84c;display:flex;justify-content:space-around;padding:8px 0 12px;border-radius:18px 18px 0 0}
+.nav div{color:#777;font-size:10px;text-align:center;flex:1}
 .nav div.active{color:#c9a84c}
-.nav div .ni{font-size:18px;display:block}
-.detail{display:none;min-height:100vh;background:#080808;padding-bottom:80px;max-width:420px;margin:0 auto}
-.detail.on{display:block}
-.dh{padding:12px;background:#141414;display:flex;align-items:center;gap:10px;border-bottom:1px solid #222}
-.dh button{background:#c9a84c;border:none;padding:6px 14px;border-radius:20px;font-weight:bold;cursor:pointer}
-.db{padding:14px}
-.db img{width:100%;border-radius:12px;margin-bottom:12px;max-height:400px;object-fit:cover}
-.db h2{color:#c9a84c;font-size:20px}
-.db .price{color:#fff;font-size:18px;font-weight:900;margin:8px 0}
 </style>
 </head>
 <body>
-<div id="home">
-<div class="banner"><img src="banner_final_exact.jpg"></div>
+<div class="banner"><img src="banner_final_exact.jpg" alt="LINA'S HOUSE"></div>
 <div class="sec">
 <div class="t">CATÉGORIES</div>
 <div class="cgrid">
-<div class="cat" onclick="openD('parfums')"><span class="ic">🧴</span><p>PARFUMS<br>PREMIUM</p></div>
-<div class="cat" onclick="openD('perso')"><span class="ic">✨</span><p>PERSONNALISATION</p></div>
-<div class="cat" onclick="openD('accessoires')"><span class="ic">👜</span><p>ACCESSOIRES<br>DE LUXE</p></div>
-<div class="cat" onclick="openD('coiffure')"><span class="ic">✂️</span><p>COIFFURE &<br>TRESSAGE</p></div>
-<div class="cat" onclick="openD('tshirt')"><span class="ic">👕</span><p>T-SHIRT</p></div>
-<div class="cat" onclick="openD('perruque')"><span class="ic">👩</span><p>PERRUQUES</p></div>
+<div class="cat"><div class="ico">🧴</div><p>PARFUMS<br>PREMIUM</p></div>
+<div class="cat"><div class="ico">✨</div><p>PERSONNALISATION</p></div>
+<div class="cat"><div class="ico">👜</div><p>ACCESSOIRES<br>DE LUXE</p></div>
+<div class="cat"><div class="ico">✂️</div><p>COIFFURE &<br>TRESSAGE</p></div>
+<div class="cat"><div class="ico">👕</div><p>T-SHIRT</p></div>
+<div class="cat"><div class="ico">👩‍🦱</div><p>PERRUQUES</p></div>
 </div>
 <div class="t">NOS PRODUITS</div>
 <div class="prod-row">
-<div class="prod" onclick="openD('parfums')"><img src="parfuns_bad-lad.jpg"><h4>BAD LAD<br>Eau de Parfum</h4><div class="pr">18 500fr</div></div>
-<div class="prod" onclick="openD('accessoires')"><img src="sac-rouge.jpg"><h4>Sac à Main<br>Bordeaux Rouge</h4><div class="pr">18 500fr</div></div>
-<div class="prod" onclick="openD('tshirt')"><img src="T-shirt.jpg"><h4>Ensemble Lacoste<br>T-shirt + Casquette</h4><div class="pr">5 000fr</div></div>
-<div class="prod" onclick="openD('perruque')"><img src="Perruque.jpg"><h4>Perruque Bouclée<br>Brune Naturelle</h4><div class="pr">25 000fr</div></div>
-<div class="prod" onclick="openD('marque')"><img src="marque-241.jpg"><h4>MARQUE 241<br>Eau de Parfum</h4><div class="pr">18 500fr</div></div>
-<div class="prod" onclick="openD('chemise')"><img src="Chemise.jpg"><h4>Chemise<br>Lacoste</h4><div class="pr">8 500fr</div></div>
+<div class="prod"><img src="parfuns_bad-lad.jpg"><h4>BAD LAD<br>Eau de Parfum</h4><div class="pr">18 500fr</div></div>
+<div class="prod"><img src="sac-rouge.jpg"><h4>Sac à Main<br>Bordeaux</h4><div class="pr">18 500fr</div></div>
+<div class="prod"><img src="T-shirt.jpg"><h4>Ensemble Lacoste</h4><div class="pr">5 000fr</div></div>
+<div class="prod"><img src="Perruque.jpg"><h4>Perruque Bouclée</h4><div class="pr">25 000fr</div></div>
+<div class="prod"><img src="marque-241.jpg"><h4>MARQUE 241</h4><div class="pr">18 500fr</div></div>
+<div class="prod"><img src="Chemise.jpg"><h4>Chemise Lacoste</h4><div class="pr">8 500fr</div></div>
 </div>
 </div>
 <div class="contact">
 <h3>CONTACTEZ-NOUS</h3>
 <div class="infos">06-34-96-20 • linashouse.business@gmail.com</div>
-<div class="socials">
-<div>f</div><div>📷</div><div>W</div><div>✆</div>
+<div class="btns"><a class="btn bw" href="https://wa.me/24206349620?text=Bonjour%20LINA%20HOUSE" target="_blank">WhatsApp</a><a class="btn bf" href="https://www.facebook.com/" target="_blank">Facebook</a></div>
 </div>
-<div class="btns">
-<a class="btn bw" href="https://wa.me/24206349620?text=Bonjour%20LINA%20HOUSE" target="_blank">WhatsApp</a>
-<a class="btn bf" href="https://www.facebook.com/" target="_blank">Facebook</a>
-</div>
-</div>
-</div>
-
-<div class="detail" id="parfums"><div class="dh"><button onclick="goH()">←</button><b style="color:#c9a84c">BAD LAD</b></div><div class="db"><img src="parfuns_bad-lad.jpg"><h2>BAD LAD</h2><div class="price">18 500fr</div><a class="btn bw" href="https://wa.me/24206349620?text=BAD%20LAD" target="_blank">WhatsApp</a><button class="btn" style="background:#222;color:#c9a84c;border:1px solid #c9a84c;margin-top:14px;width:100%" onclick="goH()">Retour</button></div></div>
-<div class="detail" id="marque"><div class="dh"><button onclick="goH()">←</button><b style="color:#c9a84c">MARQUE 241</b></div><div class="db"><img src="marque-241.jpg"><h2>MARQUE 241</h2><div class="price">18 500fr</div><a class="btn bw" href="https://wa.me/24206349620?text=MARQUE%20241" target="_blank">WhatsApp</a><button class="btn" style="background:#222;color:#c9a84c;border:1px solid #c9a84c;margin-top:14px;width:100%" onclick="goH()">Retour</button></div></div>
-<div class="detail" id="accessoires"><div class="dh"><button onclick="goH()">←</button><b style="color:#c9a84c">SAC</b></div><div class="db"><img src="sac-rouge.jpg"><h2>Sac Bordeaux</h2><div class="price">18 500fr</div><a class="btn bw" href="https://wa.me/24206349620?text=Sac%20Rouge" target="_blank">WhatsApp</a><button class="btn" style="background:#222;color:#c9a84c;border:1px solid #c9a84c;margin-top:14px;width:100%" onclick="goH()">Retour</button></div></div>
-<div class="detail" id="tshirt"><div class="dh"><button onclick="goH()">←</button><b style="color:#c9a84c">T-SHIRT</b></div><div class="db"><img src="T-shirt.jpg"><h2>Ensemble Lacoste</h2><div class="price">5 000fr</div><a class="btn bw" href="https://wa.me/24206349620?text=T-shirt" target="_blank">WhatsApp</a><button class="btn" style="background:#222;color:#c9a84c;border:1px solid #c9a84c;margin-top:14px;width:100%" onclick="goH()">Retour</button></div></div>
-<div class="detail" id="chemise"><div class="dh"><button onclick="goH()">←</button><b style="color:#c9a84c">CHEMISE</b></div><div class="db"><img src="Chemise.jpg"><h2>Chemise Lacoste</h2><div class="price">8 500fr</div><a class="btn bw" href="https://wa.me/24206349620?text=Chemise" target="_blank">WhatsApp</a><button class="btn" style="background:#222;color:#c9a84c;border:1px solid #c9a84c;margin-top:14px;width:100%" onclick="goH()">Retour</button></div></div>
-<div class="detail" id="perruque"><div class="dh"><button onclick="goH()">←</button><b style="color:#c9a84c">PERRUQUE</b></div><div class="db"><img src="Perruque.jpg"><h2>Perruque Bouclée</h2><div class="price">25 000fr</div><a class="btn bw" href="https://wa.me/24206349620?text=Perruque" target="_blank">WhatsApp</a><button class="btn" style="background:#222;color:#c9a84c;border:1px solid #c9a84c;margin-top:14px;width:100%" onclick="goH()">Retour</button></div></div>
-<div class="detail" id="perso"><div class="dh"><button onclick="goH()">←</button><b style="color:#c9a84c">PERSO</b></div><div class="db"><h2>Perso 4500fr</h2><a class="btn bw" href="https://wa.me/24206349620?text=Perso" target="_blank">WhatsApp</a><button class="btn" style="background:#222;color:#c9a84c;border:1px solid #c9a84c;margin-top:14px;width:100%" onclick="goH()">Retour</button></div></div>
-<div class="detail" id="coiffure"><div class="dh"><button onclick="goH()">←</button><b style="color:#c9a84c">COIFFURE</b></div><div class="db"><h2>Coiffure & Tressage</h2><a class="btn bw" href="https://wa.me/24206349620?text=Coiffure" target="_blank">WhatsApp</a><button class="btn" style="background:#222;color:#c9a84c;border:1px solid #c9a84c;margin-top:14px;width:100%" onclick="goH()">Retour</button></div></div>
-
 <div class="nav">
-<div class="active" onclick="goH()"><span class="ni">🏠</span>Accueil</div>
-<div onclick="goBoutique()"><span class="ni">🛍️</span>Boutique</div>
-<div><span class="ni">❤️</span>Favoris</div>
-<div onclick="goContact()"><span class="ni">👤</span>Compte</div>
+<div class="active">🏠<br>Accueil</div>
+<div>🛍️<br>Boutique</div>
+<div>❤️<br>Favoris</div>
+<div>👤<br>Compte</div>
 </div>
-<script>
-function openD(id){document.getElementById('home').style.display='none';document.querySelectorAll('.detail').forEach(d=>d.classList.remove('on'));document.getElementById(id).classList.add('on');window.scrollTo(0,0);}
-function goH(){document.getElementById('home').style.display='block';document.querySelectorAll('.detail').forEach(d=>d.classList.remove('on'));window.scrollTo(0,0);}
-function goBoutique(){goH();setTimeout(()=>{document.querySelector('.prod-row').scrollIntoView({behavior:'smooth'});},100);}
-function goContact(){goH();setTimeout(()=>{document.querySelector('.contact').scrollIntoView({behavior:'smooth'});},100);}
-</script>
 </body>
 </html>
