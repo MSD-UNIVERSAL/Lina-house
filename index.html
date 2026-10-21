@@ -2,110 +2,83 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <title>LINA'S HOUSE</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:#0a0a0a;color:#f5e6c8;font-family:Arial;padding-bottom:80px}
-.hero img{width:100%;display:block;cursor:pointer}
-.section{padding:12px}
-.stitle{color:#c9a84c;font-size:13px;font-weight:800;margin:12px 4px}
+body{background:#080808;color:#fff;font-family:Arial, sans-serif;padding-bottom:90px}
+.hero img{width:100%;display:block}
+.sec{padding:12px}
+.t{color:#c9a84c;font-weight:800;font-size:15px;margin:10px 0}
 .cgrid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
-.cat{border:1.6px solid #c9a84c;border-radius:14px;background:#141414;padding:18px 6px;text-align:center;cursor:pointer}
-.cat p{color:#c9a84c;font-size:10px;font-weight:bold;margin-top:8px}
+.cat{background:#121212;border:1.5px solid #c9a84c;border-radius:12px;padding:16px 4px;text-align:center;cursor:pointer}
+.cat span{font-size:30px;display:block;color:#c9a84c}
+.cat p{color:#c9a84c;font-size:8px;font-weight:800;margin-top:6px;line-height:1.2}
 .pgrid{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:8px}
-.prod{background:#fff;border-radius:12px;text-align:center;padding-bottom:8px;cursor:pointer}
-.prod h4{font-size:8px;color:#111;margin:4px 2px 0;font-weight:700}
-.price{color:#8a6a1e;font-weight:900;font-size:10px;margin-top:3px}
-.detail{display:none;padding:14px}
-.detail.active{display:block}
-.btn{width:100%;padding:12px;border:none;border-radius:8px;font-weight:bold;margin-top:8px;cursor:pointer}
-.btn-wa{background:#25D366;color:#fff}
-.btn-back{background:#c9a84c;color:#000;margin-top:16px}
-.nav{position:fixed;bottom:0;left:0;right:0;background:#0a0a0a;border-top:1px solid #c9a84c;display:flex;justify-content:space-around;padding:10px 0}
-.nav div{color:#888;font-size:10px;text-align:center;cursor:pointer}
-.nav .active{color:#c9a84c}
+.prod{background:#fff;border-radius:10px;overflow:hidden;text-align:center;cursor:pointer;padding-bottom:6px}
+.prod img{width:100%;height:95px;object-fit:cover}
+.prod h4{color:#222;font-size:8px;font-weight:600;margin:4px 2px;line-height:1.2;min-height:22px}
+.prod .pr{color:#8a6a1e;font-weight:900;font-size:11px}
+.contact{text-align:center;padding:18px 8px}
+.contact h3{color:#c9a84c;font-size:13px}
+.contact p{color:#aaa;font-size:11px;margin-top:6px}
+.nav{position:fixed;bottom:0;left:0;right:0;background:#080808;border-top:1px solid #222;display:flex;justify-content:space-around;padding:8px 0 12px}
+.nav div{color:#666;font-size:10px;text-align:center;flex:1;cursor:pointer}
+.nav .a{color:#c9a84c}
+.detail{display:none;min-height:100vh;background:#080808;padding:0}
+.detail.on{display:block}
+.dh{padding:12px;background:#141414;display:flex;gap:10px;align-items:center;border-bottom:1px solid #222}
+.dh button{background:#c9a84c;border:none;padding:6px 12px;border-radius:15px;font-weight:bold}
+.db{padding:14px}
+.db img{width:100%;border-radius:10px;margin-bottom:12px}
+.db h2{color:#c9a84c;font-size:18px}
+.db .pr2{color:#fff;font-weight:900;margin:8px 0}
+.btn{width:100%;padding:13px;border:none;border-radius:8px;font-weight:800;margin-top:10px;cursor:pointer;display:block;text-align:center;text-decoration:none}
+.bw{background:#25D366;color:#fff}
+.bb{background:#111;color:#c9a84c;border:1px solid #c9a84c;margin-top:16px}
 </style>
 </head>
 <body>
-
-<div class="hero" id="topHero" onclick="goBoutique()"><img src="final_banner.jpg"></div>
-
-<div id="accueil">
-<div class="section">
-<div class="stitle">CATEGORIES</div>
+<div id="home">
+<div class="hero" onclick="toP()"><img src="banner_final_exact.jpg"></div>
+<div class="sec">
+<div class="t">CATÉGORIES</div>
 <div class="cgrid">
-<div class="cat" onclick="openCat('parfums')">🧴<p>PARFUMS PREMIUM</p></div>
-<div class="cat" onclick="openCat('perso')">✨<p>PERSONNALISATION</p></div>
-<div class="cat" onclick="openCat('accessoires')">👜<p>ACCESSOIRES DE LUXE</p></div>
-<div class="cat" onclick="openCat('coiffure')">💇<p>COIFFURE & TRESSAGE</p></div>
-<div class="cat" onclick="openCat('tshirt')">👕<p>T-SHIRT</p></div>
-<div class="cat" onclick="openCat('perruques')">👩‍🦱<p>PERRUQUES</p></div>
+<div class="cat" onclick="openD('parfums')"><span>🧴</span><p>PARFUMS<br>PREMIUM</p></div>
+<div class="cat" onclick="openD('perso')"><span>✨</span><p>PERSONNALISATION</p></div>
+<div class="cat" onclick="openD('sacs')"><span>👜</span><p>ACCESSOIRES<br>DE LUXE</p></div>
+<div class="cat" onclick="openD('coiffure')"><span>✂️</span><p>COIFFURE &<br>TRESSAGE</p></div>
+<div class="cat" onclick="openD('tshirt')"><span>👕</span><p>T-SHIRT</p></div>
+<div class="cat" onclick="openD('perruque')"><span>👩</span><p>PERRUQUES</p></div>
 </div>
-</div>
-
-<div class="section" id="nosProds">
-<div class="stitle">NOS PRODUITS</div>
+<div class="t">NOS PRODUITS</div>
 <div class="pgrid">
-<div class="prod" onclick="openCat('parfums')"><div style="height:100px;display:flex;align-items:center;justify-content:center;font-size:40px">🧴</div><h4>BAD LAD</h4><div class="price">18 500fr</div></div>
-<div class="prod" onclick="openCat('accessoires')"><div style="height:100px;display:flex;align-items:center;justify-content:center;font-size:40px">👜</div><h4>Sac Bordeaux</h4><div class="price">18 500fr</div></div>
-<div class="prod" onclick="openCat('tshirt')"><div style="height:100px;display:flex;align-items:center;justify-content:center;font-size:40px">👕</div><h4>Ensemble Blanc</h4><div class="price">5 000fr</div></div>
-<div class="prod" onclick="openCat('perruques')"><div style="height:100px;display:flex;align-items:center;justify-content:center;font-size:40px">👩‍🦱</div><h4>Perruque Brune</h4><div class="price">40 000fr</div></div>
+<div class="prod" onclick="openD('parfums')"><img src="wa_image_3360684114364956597_0.jpg"><h4>BAD LAD<br>Eau de Parfum</h4><div class="pr">18 500fr</div></div>
+<div class="prod" onclick="openD('sacs')"><img src="wa_image_3360684114364956597_3.jpg"><h4>Sac à Main<br>Bordeaux Rouge</h4><div class="pr">18 500fr</div></div>
+<div class="prod" onclick="openD('tshirt')"><img src="wa_image_3360684114364956597_2.jpg"><h4>Ensemble Lacoste<br>T-shirt + Casquette</h4><div class="pr">5 000fr</div></div>
+<div class="prod" onclick="openD('perruque')"><img src="wa_image_3360684114364956597_1.jpg"><h4>Perruque Bouclée<br>Brune Naturelle</h4><div class="pr" style="font-size:7px">T12 25k • T14 35k • T18 40k</div></div>
 </div>
 </div>
-</div>
-
-<!-- PAGES DETAILS AVEC COMMANDE -->
-<div class="detail" id="parfums">
-<h2 style="color:#c9a84c">PARFUMS - 18 500 FCFA</h2>
-<p style="color:#ccc;margin:12px 0">BAD LAD Noir Original</p>
-<button class="btn btn-wa" onclick="wa('BAD LAD 18500fr')">Commander sur WhatsApp</button>
-<button class="btn btn-back" onclick="home()">← Retour</button>
+<div class="contact"><h3>CONTACTEZ-NOUS</h3><p>06-34-96-20 • linashouse.business@gmail.com</p></div>
 </div>
 
-<div class="detail" id="tshirt">
-<h2 style="color:#c9a84c">T-SHIRT BLANC ORIGINAL</h2>
-<p style="color:#ccc;margin:12px 0">Ensemble T-shirt + Casquette Lacoste BLANC - 5 000fr<br>À partir de 5 = réduction<br><br>Chemise Bleue - 8 500fr<br>T-shirt Perso Blanc - 4 500fr<br>T-shirt Simple Blanc - 4 000fr</p>
-<button class="btn btn-wa" onclick="wa('T-shirt Blanc')">Commander T-shirt Blanc sur WhatsApp</button>
-<button class="btn btn-back" onclick="home()">← Retour</button>
-</div>
-
-<div class="detail" id="perruques">
-<h2 style="color:#c9a84c">PERRUQUES</h2>
-<p style="color:#ccc;margin:12px 0">Perruque Bouclée Brune<br>T12: 25 000F<br>T14: 35 000F<br>T18: 40 000F</p>
-<button class="btn btn-wa" onclick="wa('Perruque Bouclée Brune')">Commander Perruque sur WhatsApp</button>
-<button class="btn btn-back" onclick="home()">← Retour</button>
-</div>
-
-<div class="detail" id="accessoires">
-<h2 style="color:#c9a84c">ACCESSOIRES - 18 500 FCFA</h2>
-<p style="color:#ccc;margin:12px 0">Sac Bordeaux Rouge Original</p>
-<button class="btn btn-wa" onclick="wa('Sac Bordeaux 18500fr')">Commander</button>
-<button class="btn btn-back" onclick="home()">← Retour</button>
-</div>
-
-<div class="detail" id="perso"><h2 style="color:#c9a84c">PERSONNALISATION</h2><button class="btn btn-wa" onclick="wa('Perso')">Commander</button><button class="btn btn-back" onclick="home()">← Retour</button></div>
-<div class="detail" id="coiffure"><h2 style="color:#c9a84c">COIFFURE & TRESSAGE</h2><button class="btn btn-wa" onclick="wa('Coiffure')">Réserver</button><button class="btn btn-back" onclick="home()">← Retour</button></div>
-
-<div class="contact" id="contactSec" style="text-align:center;padding:20px">
-<h3 style="color:#c9a84c">CONTACTEZ-NOUS</h3>
-<p style="font-size:12px;margin-top:8px;color:#ccc">06-34-96-20 • linashouse.business@gmail.com</p>
-</div>
+<div class="detail" id="parfums"><div class="dh"><button onclick="goH()">←</button><b style="color:#c9a84c">PARFUMS</b></div><div class="db"><h2>BAD LAD - 18 500fr</h2><p style="color:#ccc;font-size:13px;margin:10px 0">Parfum premium original. Livraison Pointe-Noire.</p><a class="btn bw" href="https://wa.me/24206349620?text=Je%20veux%20BAD%20LAD%2018500fr" target="_blank">Commander WhatsApp</a><button class="btn bb" onclick="goH()">Retour</button></div></div>
+<div class="detail" id="sacs"><div class="dh"><button onclick="goH()">←</button><b style="color:#c9a84c">SACS</b></div><div class="db"><img src="wa_image_3360684114364956597_3.jpg"><h2>Sac Bordeaux Rouge</h2><div class="pr2">18 500fr</div><a class="btn bw" href="https://wa.me/24206349620?text=Sac%20Bordeaux%2018500fr" target="_blank">Commander WhatsApp</a><button class="btn bb" onclick="goH()">Retour</button></div></div>
+<div class="detail" id="tshirt"><div class="dh"><button onclick="goH()">←</button><b style="color:#c9a84c">T-SHIRT</b></div><div class="db"><img src="wa_image_3360684114364956597_2.jpg"><h2>Ensemble Lacoste + Casquette</h2><div class="pr2">5 000fr</div><p style="color:#ccc;font-size:13px">T-shirt perso 4500fr<br>T-shirt simple 4000fr<br>T-shirt+casquette 5000fr<br>Chemise 8500fr<br><br>A partir de 5 réduction</p><img src="wa_image_3360684114364956597_0.jpg"><a class="btn bw" href="https://wa.me/24206349620?text=T-shirt" target="_blank">Commander WhatsApp</a><button class="btn bb" onclick="goH()">Retour</button></div></div>
+<div class="detail" id="perruque"><div class="dh"><button onclick="goH()">←</button><b style="color:#c9a84c">PERRUQUES</b></div><div class="db"><img src="wa_image_3360684114364956597_1.jpg"><h2>Perruque Bouclée Brune</h2><div class="pr2">T12 25.000fr<br>T14 35.000fr<br>T18 40.000fr</div><a class="btn bw" href="https://wa.me/24206349620?text=Perruque%20Bouclee" target="_blank">Commander WhatsApp</a><button class="btn bb" onclick="goH()">Retour</button></div></div>
+<div class="detail" id="perso"><div class="dh"><button onclick="goH()">←</button><b style="color:#c9a84c">PERSONNALISATION</b></div><div class="db"><h2>Personnalisation 4500fr</h2><a class="btn bw" href="https://wa.me/24206349620?text=Perso" target="_blank">WhatsApp</a><button class="btn bb" onclick="goH()">Retour</button></div></div>
+<div class="detail" id="coiffure"><div class="dh"><button onclick="goH()">←</button><b style="color:#c9a84c">COIFFURE</b></div><div class="db"><h2>Coiffure & Tressage</h2><a class="btn bw" href="https://wa.me/24206349620?text=Coiffure" target="_blank">RDV WhatsApp</a><button class="btn bb" onclick="goH()">Retour</button></div></div>
 
 <div class="nav">
-<div class="active" onclick="home()">🏠<br>Accueil</div>
-<div onclick="goBoutique()">🛍️<br>Boutique</div>
-<div onclick="alert('Favoris bientôt')">❤️<br>Favoris</div>
-<div onclick="goContact()">👤<br>Compte</div>
+<div class="a" onclick="goH()">🏠<br>Accueil</div>
+<div onclick="toP()">🛍️<br>Boutique</div>
+<div onclick="alert('Bientôt')">❤️<br>Favoris</div>
+<div onclick="goH();setTimeout(()=>document.querySelector('.contact').scrollIntoView({behavior:'smooth'}),100)">👤<br>Compte</div>
 </div>
-
 <script>
-var WA="242066349620";
-function openCat(id){document.getElementById('accueil').style.display='none';document.getElementById('topHero').style.display='none';document.getElementById('contactSec').style.display='none';document.querySelectorAll('.detail').forEach(d=>d.classList.remove('active'));document.getElementById(id).classList.add('active');window.scrollTo(0,0);}
-function home(){document.getElementById('accueil').style.display='block';document.getElementById('topHero').style.display='block';document.getElementById('contactSec').style.display='block';document.querySelectorAll('.detail').forEach(d=>d.classList.remove('active'));window.scrollTo(0,0);}
-function goBoutique(){home();setTimeout(()=>document.getElementById('nosProds').scrollIntoView({behavior:'smooth'}),100);}
-function goContact(){home();setTimeout(()=>document.getElementById('contactSec').scrollIntoView({behavior:'smooth'}),100);}
-function wa(m){window.open('https://wa.me/'+WA+'?text=Bonjour LINA HOUSE, je veux: '+m,'_blank');}
+function openD(id){document.getElementById('home').style.display='none';document.querySelectorAll('.detail').forEach(d=>d.classList.remove('on'));document.getElementById(id).classList.add('on');window.scrollTo(0,0);}
+function goH(){document.getElementById('home').style.display='block';document.querySelectorAll('.detail').forEach(d=>d.classList.remove('on'));window.scrollTo(0,0);}
+function toP(){goH();setTimeout(()=>document.querySelector('.t').nextElementSibling.nextElementSibling.scrollIntoView({behavior:'smooth'}),100);}
 </script>
 </body>
 </html>
