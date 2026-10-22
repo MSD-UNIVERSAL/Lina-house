@@ -3,34 +3,36 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LINA'S HOUSE</title>
+<title>LINA'S HOUSE - Boutique Luxe</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:#080808;color:#fff;font-family:Arial,sans-serif;max-width:430px;margin:0 auto;padding-bottom:90px}
-.banner{width:100%;background:#000;border-bottom:2px solid #d4af37;overflow:hidden}
-.banner img{width:100%;height:auto;display:block;object-fit:contain;object-position:center top}
+body{background:#080808;color:#fff;font-family:Arial,sans-serif;max-width:430px;margin:0 auto;padding-bottom:20px}
+.banner{width:100%;background:#000;position:relative;overflow:hidden;border-bottom:1px solid #c9a84c}
+.banner img{width:100%;height:auto;display:block}
 .sec{padding:12px}
-.t{color:#d4af37;font-weight:800;font-size:13px;margin:18px 0 12px;letter-spacing:0.5px}
+.t{color:#c9a84c;font-weight:700;font-size:13px;margin:16px 0 12px;letter-spacing:2px;text-align:center}
+.t2{color:#c9a84c;font-weight:400;font-size:11px;letter-spacing:2px;display:flex;justify-content:space-between;align-items:center;margin:16px 12px 12px}
+.t2 a{color:#777;font-size:10px;text-decoration:none}
 .cgrid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
-.cat{background:#111;border:1.5px solid #c9a84c;border-radius:12px;padding:16px 4px 12px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:110px}
-.cat svg{width:48px;height:48px;fill:#c9a84c;margin-bottom:8px}
-.cat p{color:#c9a84c;font-size:10px;font-weight:800;line-height:1.2}
-.prod-row{display:flex;gap:10px;overflow-x:auto;padding-bottom:8px}
-.prod-row::-webkit-scrollbar{display:none}
-.prod{min-width:115px;max-width:115px;background:#fff;border-radius:10px;overflow:hidden;flex-shrink:0;text-align:center}
-.prod img{width:100%;height:110px;object-fit:cover}
-.prod h4{color:#111;font-size:9.5px;font-weight:700;margin:5px 3px;min-height:28px}
-.prod .pr{color:#b8963a;font-weight:900;font-size:11px;padding-bottom:7px}
-.contact{text-align:center;padding:16px;background:#0e0e0e;border:1.5px solid #c9a84c;border-radius:12px;margin:14px 12px}
-.contact h3{color:#c9a84c;font-size:13px;font-weight:900;margin-bottom:6px}
-.contact .infos{color:#ccc;font-size:11px}
+.cat{background:#111;border:1.2px solid #c9a84c;border-radius:12px;padding:18px 4px;text-align:center;min-height:92px;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;transition:all 0.3s ease}
+.cat:first-child{box-shadow:0 0 18px rgba(212,175,55,0.6);border-color:#d4af37}
+.cat svg{width:34px;height:34px;fill:#c9a84c;margin-bottom:8px}
+.cat p{color:#c9a84c;font-size:9px;font-weight:800;line-height:1.3}
+.prod-grid{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:8px;padding:0 8px}
+.prod{background:#fff;border-radius:10px;overflow:hidden;text-align:center;padding-bottom:6px;position:relative}
+.prod img{width:100%;height:95px;object-fit:cover}
+.prod h4{color:#111;font-size:9px;font-weight:700;margin:5px 2px 2px;min-height:20px}
+.prod .pr{color:#b8963a;font-weight:800;font-size:9px}
+.prod .cart{position:absolute;bottom:4px;right:4px;background:#c9a84c;width:18px;height:18px;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff}
+.contact{text-align:center;padding:14px;background:#0e0e0e;border:1.2px solid #c9a84c;border-radius:12px;margin:16px 12px}
+.contact h3{color:#c9a84c;font-size:11px;font-weight:700;letter-spacing:2px;margin-bottom:8px}
+.contact .infos{color:#ccc;font-size:11px;margin:4px 0}
 .btns{display:flex;gap:10px;justify-content:center;margin-top:10px}
-.btn{padding:10px 18px;border-radius:20px;font-weight:800;font-size:12px;text-decoration:none}
-.bw{background:#25D366;color:#fff}
-.bf{background:#1877F2;color:#fff}
-.nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:430px;background:#0e0e0e;border-top:1.5px solid #c9a84c;display:flex;justify-content:space-around;padding:8px 0 10px;border-radius:16px 16px 0 0}
-.nav div{color:#777;font-size:10px;text-align:center;flex:1}
-.nav div.active{color:#c9a84c}
+.btn{padding:8px 20px;border-radius:20px;font-weight:700;font-size:11px;text-decoration:none;display:flex;align-items:center;gap:6px}
+.bw{background:#2e7d32;color:#fff}
+.bf{background:#3b5998;color:#fff}
+.loc{color:#c9a84c;font-size:10px;margin-top:10px;display:flex;align-items:center;justify-content:center;gap:4px}
+.copy{color:#555;font-size:8px;margin-top:6px;text-align:center}
 </style>
 </head>
 <body>
@@ -38,24 +40,37 @@ body{background:#080808;color:#fff;font-family:Arial,sans-serif;max-width:430px;
 <div class="sec">
 <div class="t">CATÉGORIES</div>
 <div class="cgrid">
-<div class="cat"><svg viewBox="0 0 24 24"><path d="M9 6h6v2H9V6zm-1 3h8v8a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2v-8z M10 2h4v2h-4V2z"/></svg><p>PARFUMS<br>PREMIUM</p></div>
-<div class="cat"><svg viewBox="0 0 24 24"><path d="M12 2l1.5 4.5L18 8l-4.5 1.5L12 14l-1.5-4.5L6 8l4.5-1.5L12 2z M19 4l1 2 2 1-2 1-1 2-1-2-2-1 2-1 1-2z M6 15l1 2 2 1-2 1-1 2-1-2-2-1 2-1 1-2z"/></svg><p>PERSONNALISATION</p></div>
-<div class="cat"><svg viewBox="0 0 24 24"><path d="M7 8V6a5 5 0 0 1 10 0v2h1a2 2 0 0 1 2 2v1H4v-1a2 2 0 0 1 2-2h1zm2 0h6V6a3 3 0 0 0-6 0v2z"/></svg><p>ACCESSOIRES<br>DE LUXE</p></div>
-<div class="cat"><svg viewBox="0 0 24 24"><path d="M17.5 2a1 1 0 0 1 1.4 1.4L9.4 12.9l-4 1.2 1.2-4 9.9-9.9a1 1 0 0 1 1.4 0z M6 15l-2 5 5-2 1-1-4-2z M11 6l2 2"/></svg><p>COIFFURE &<br>TRESSAGE</p></div>
-<div class="cat"><svg viewBox="0 0 24 24"><path d="M12 2l4 2v2h3a1 1 0 0 1 1 1v3a4 4 0 0 1-4 4v4a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-4a4 4 0 0 1-4-4V7a1 1 0 0 1 1-1h3V4l4-2z"/></svg><p>T-SHIRT</p></div>
-<div class="cat"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 3 2 5 2 8h2c0-2 1-3 2-4 1 1 2 2 2 4h2c0-3 2-5 2-8a7 7 0 0 0-7-7z"/></svg><p>PERRUQUES</p></div>
+<div class="cat" onclick="location.href='#parfums'"><svg viewBox="0 0 24 24"><path d="M9 3h6v2H9V3zm1 2h4v2h-4V5zm-2 3h8v10a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2V8z M11 0h2v2h-2V0z"/></svg><p>PARFUMS<br>PREMIUM</p></div>
+<div class="cat" onclick="location.href='#vetements'"><svg viewBox="0 0 24 24"><path d="M12 2a1 1 0 0 0-1 1v1H8a1 1 0 0 0-1 1v2h2V6h6v1h2V5a1 1 0 0 0-1-1h-3V3a1 1 0 0 0-1-1z M7 7a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1H7z"/></svg><p>VÊTEMENTS</p></div>
+<div class="cat" onclick="location.href='#perruques'"><svg viewBox="0 0 24 24"><path d="M12 2a6 6 0 0 0-6 6c0 2 1 3.5 1 5.5 0 1.5 1 2.5 2 2.5s1-1 2-2c0 1 1 2 1 2s1-1 1-2c1 1 1 2 2 2s2-1 2-2.5c0-2 1-3.5 1-5.5a6 6 0 0 0-6-6z"/></svg><p>PERRUQUES</p></div>
+<div class="cat" onclick="location.href='#chaussures'"><svg viewBox="0 0 24 24"><path d="M2 18l4-4 3 1 2-3 6-2 3 1-1 3-4 1-3 2-2 1H2z"/></svg><p>CHAUSSURES</p></div>
+<div class="cat" onclick="location.href='#accessoires'"><svg viewBox="0 0 24 24"><path d="M7 8V6a4 4 0 0 1 8 0v2h2a2 2 0 0 1 2 2v1H3v-1a2 2 0 0 1 2-2h2zm2 0h4V6a2 2 0 0 0-4 0v2z M12 13a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/></svg><p>ACCESSOIRES</p></div>
+<div class="cat" onclick="location.href='#nouveautes'"><svg viewBox="0 0 24 24"><path d="M12 2l1.2 3.5L17 7l-3.5 1.2L12 12l-1.2-3.8L7 7l3.8-1.5L12 2z"/></svg><p>NOUVEAUTÉS</p></div>
 </div>
-<div class="t">NOS PRODUITS</div>
-<div class="prod-row">
-<div class="prod"><img src="parfuns_bad-lad.jpg"><h4>BAD LAD</h4><div class="pr">18 500fr</div></div>
-<div class="prod"><img src="sac-rouge.jpg"><h4>Sac Bordeaux</h4><div class="pr">18 500fr</div></div>
-<div class="prod"><img src="T-shirt.jpg"><h4>Lacoste</h4><div class="pr">5 000fr</div></div>
-<div class="prod"><img src="Perruque.jpg"><h4>Perruque</h4><div class="pr">25 000fr</div></div>
-<div class="prod"><img src="marque-241.jpg"><h4>MARQUE 241</h4><div class="pr">18 500fr</div></div>
-<div class="prod"><img src="Chemise.jpg"><h4>Chemise</h4><div class="pr">8 500fr</div></div>
+
+<div class="t2"><span>NOS PRODUITS</span><a href="#">Voir tout ></a></div>
+<div class="prod-grid">
+<div class="prod"><img src="parfuns_bad-lad.jpg"><h4>BAD LAD</h4><div class="pr">18 500fr</div><div class="cart">🛒</div></div>
+<div class="prod"><img src="marque-241.jpg"><h4>MARQUE 241</h4><div class="pr">18 500fr</div><div class="cart">🛒</div></div>
+<div class="prod"><img src="T-shirt.jpg"><h4>Lacoste T-shirt</h4><div class="pr">5 000fr</div><div class="cart">🛒</div></div>
+<div class="prod"><img src="Perruque.jpg"><h4>Perruque</h4><div class="pr">25 000fr</div><div class="cart">🛒</div></div>
+<div class="prod"><img src="T-shirt.jpg"><h4>Lacoste T-shirt</h4><div class="pr">5 000fr</div><div class="cart">🛒</div></div>
+<div class="prod"><img src="Perruque.jpg"><h4>Perruque</h4><div class="pr">25 000fr</div><div class="cart">🛒</div></div>
+<div class="prod"><img src="Chemise.jpg"><h4>Chemise Lacoste</h4><div class="pr">8 500fr</div><div class="cart">🛒</div></div>
+<div class="prod"><img src="sac-rouge.jpg"><h4>Sac Bordeaux</h4><div class="pr">18 500fr</div><div class="cart">🛒</div></div>
 </div>
 </div>
-<div class="contact"><h3>CONTACTEZ-NOUS</h3><div class="infos">06-34-96-20 • linashouse.business@gmail.com</div><div class="btns"><a class="btn bw" href="https://wa.me/24206349620">WhatsApp</a><a class="btn bf" href="https://facebook.com/">Facebook</a></div></div>
-<div class="nav"><div class="active">🏠<br>Accueil</div><div>🛍️<br>Boutique</div><div>❤️<br>Favoris</div><div>👤<br>Compte</div></div>
+
+<div class="contact">
+<h3>CONTACTEZ-NOUS</h3>
+<div class="infos">📞 06-34-96-20</div>
+<div class="infos">✉️ linashouse.business@gmail.com</div>
+<div class="btns">
+<a class="btn bw" href="https://wa.me/24206349620">💬 WhatsApp</a>
+<a class="btn bf" href="https://facebook.com/">f Facebook</a>
+</div>
+</div>
+<div class="loc">📍 Pointe-Noire, Congo Brazzaville</div>
+<div class="copy">© 2024 LINA'S HOUSE • Tous droits réservés</div>
 </body>
 </html>
