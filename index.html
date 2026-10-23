@@ -32,6 +32,10 @@ body{background:#080808;color:#fff;font-family:Arial,sans-serif;max-width:430px;
 .bf{background:#3b5998;color:#fff}
 .loc{color:#c9a84c;font-size:10px;margin-top:10px;display:flex;align-items:center;justify-content:center;gap:4px}
 .copy{color:#555;font-size:8px;margin-top:6px;text-align:center}
+/* ZOOM PHOTO */
+#zoom{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.9);display:none;align-items:center;justify-content:center;z-index:9999;cursor:pointer}
+#zoom img{max-width:95%;max-height:90%;border-radius:12px;border:2px solid #c9a84c;box-shadow:0 0 30px rgba(212,175,55,.8)}
+#zoom.active{display:flex}
 </style>
 </head>
 <body>
@@ -64,15 +68,27 @@ body{background:#080808;color:#fff;font-family:Arial,sans-serif;max-width:430px;
 
 <div class="contact">
 <h3>CONTACTEZ-NOUS</h3>
-<div class="infos">📞 06-634-96-20</div>
+<div class="infos">📞 06-34-96-20</div>
 <div class="infos">✉️ linashouse.business@gmail.com</div>
 <div class="btns">
-<a class="btn bw" href="https://wa.me/242066349620">💬 WhatsApp</a>
+<a class="btn bw" href="https://wa.me/24206349620">💬 WhatsApp</a>
 <a class="btn bf" href="https://facebook.com/">f Facebook</a>
 </div>
 </div>
 <div class="loc">📍 Pointe-Noire, Congo Brazzaville</div>
 <div class="copy">© 2024 LINA'S HOUSE • Tous droits réservés</div>
+
+<div id="zoom" onclick="this.classList.remove('active')"><img id="zoomImg" src=""></div>
+<script>
+document.querySelectorAll('.prod img, .banner img').forEach(i=>{
+ i.style.cursor='zoom-in';
+ i.onclick=e=>{
+   e.stopPropagation();
+   document.getElementById('zoomImg').src=i.src;
+   document.getElementById('zoom').classList.add('active');
+ }
+});
+</script>
 
 </body>
 </html>
