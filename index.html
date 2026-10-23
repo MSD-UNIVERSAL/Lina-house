@@ -61,7 +61,16 @@ body{background:#080808;color:#fff;font-family:Arial,sans-serif;max-width:430px;
 <div class="prod"><img src="sac-rouge.jpg"><h4>Sac Bordeaux</h4><div class="pr">18 500fr</div></div>
 </div>
 </div>
-<div class="contact"><h3>CONTACTEZ-NOUS</h3><div class="infos">📞 06-34-96-20</div><div class="infos">✉️ linashouse.business@gmail.com</div><div class="btns"><a class="btn bw" href="https://wa.me/24206349620">💬 WhatsApp</a><a class="btn bf" href="https://facebook.com/">f Facebook</a></div></div>
+
+<div class="contact">
+<h3>CONTACTEZ-NOUS</h3>
+<div class="infos">📞 06-63-49-620</div>
+<div class="infos">✉️ linashouse.business@gmail.com</div>
+<div class="btns">
+<a class="btn bw" href="https://wa.me/242066349620" target="_blank">💬 WhatsApp</a>
+<a class="btn bf" href="https://www.facebook.com/share/19ce448G6v/?mibextid=wwXIfr" target="_blank">f Facebook</a>
+</div>
+</div>
 <div class="loc">📍 Pointe-Noire, Congo Brazzaville</div>
 <div class="copy">© 2024 LINA'S HOUSE • Tous droits réservés</div>
 
@@ -71,7 +80,7 @@ body{background:#080808;color:#fff;font-family:Arial,sans-serif;max-width:430px;
     <h3 id="zoomTitle" style="color:#c9a84c;margin:14px 0 10px;font-size:15px"></h3>
     <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
       <a id="zoomWa" href="#" target="_blank" style="padding:12px 24px;border-radius:25px;background:#2e7d32;color:#fff;font-weight:800;text-decoration:none;font-size:12px">💬 Commander sur WhatsApp</a>
-      <a id="zoomFb" href="https://facebook.com/" target="_blank" style="padding:12px 24px;border-radius:25px;background:#3b5998;color:#fff;font-weight:800;text-decoration:none;font-size:12px">f Commander sur Facebook</a>
+      <a href="https://www.facebook.com/share/19ce448G6v/?mibextid=wwXIfr" target="_blank" style="padding:12px 24px;border-radius:25px;background:#3b5998;color:#fff;font-weight:800;text-decoration:none;font-size:12px">f Commander sur Facebook</a>
     </div>
     <div style="color:#777;font-size:10px;margin-top:12px">Clique dehors pour fermer ✕</div>
   </div>
@@ -84,7 +93,7 @@ document.querySelectorAll('.prod').forEach(p=>{
   img.onclick=()=>{
     document.getElementById('zoomImg').src=img.src;
     document.getElementById('zoomTitle').innerText=name;
-    document.getElementById('zoomWa').href='https://wa.me/24206349620?text=Bonjour%20LINA\'S%20HOUSE%20!%20Je%20veux%20commander%20:%20'+encodeURIComponent(name);
+    document.getElementById('zoomWa').href='https://wa.me/242066349620?text=Bonjour%20LINA%27S%20HOUSE%20!%20Je%20veux%20commander%20:%20'+encodeURIComponent(name);
     document.getElementById('zoom').classList.add('active');
   }
 });
